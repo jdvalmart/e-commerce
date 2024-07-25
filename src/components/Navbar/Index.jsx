@@ -101,7 +101,7 @@ function Navbar() {
                     </NavLink>
                 </li>
                 <li>
-                    🛒
+                    🛒0
                 </li>
                 
             </ul>
