@@ -1,14 +1,18 @@
-import { NavLink } from "react-router-dom"
+import { useContext } from 'react'
+import { ShoppingCartContext } from '../../context'
+import { NavLink } from 'react-router-dom'
 
 function Navbar() {
+
+    const context = useContext(ShoppingCartContext)
 
     const activeStyle = 'underline underline-offset-4'
     
 
     return(
-        <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 txt-sm font-light">
-            <ul className="flex items-center gap-3">
-                <li className="font-semibold text-lg">
+        <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 txt-sm font-light'>
+            <ul className='flex items-center gap-3'>
+                <li className='font-semibold text-lg'>
                     <NavLink 
                     to='/'>
                         Shopi
@@ -69,8 +73,8 @@ function Navbar() {
                     </NavLink>
                 </li>
             </ul>
-            <ul className="flex items-center gap-3 ">
-                <li className="text-black/60">
+            <ul className='flex items-center gap-3 '>
+                <li className='text-black/60'>
                     jvalmart@mail.com
                 </li>
                 <li>
@@ -101,7 +105,7 @@ function Navbar() {
                     </NavLink>
                 </li>
                 <li>
-                    🛒0
+                    🛒 {context.count}
                 </li>
                 
             </ul>

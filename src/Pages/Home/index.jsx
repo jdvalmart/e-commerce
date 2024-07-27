@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
-import { Layout} from "../../components/Layout"
-import { Card } from "../../components/Card"
+import { useState, useEffect } from 'react'
+import { Layout} from '../../components/Layout'
+import { Card } from '../../components/Card'
 
 
 
@@ -16,10 +16,10 @@ function Home() {
 
   return (
    <Layout>
-      home
+      Home
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
         {
-          items?.map( item => (
+          items?.map((item) => (
           <Card key={item.id} data={item} />
         ))
         }
