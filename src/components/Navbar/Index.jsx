@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { ShoppingCartContext } from '../../context'
+import { ShoppingCartContext } from '../../context/ShoppingCartContext/index'
 import { NavLink } from 'react-router-dom'
+import {ShoppingBagIcon} from '@heroicons/react/24/solid'
 
 function Navbar() {
 
@@ -29,11 +30,11 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink 
-                    to='/clothes'
+                    to='/Menclothes'
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
-                        Clothes
+                        Men's clothing
                     </NavLink>
                 </li>
                 <li>
@@ -42,7 +43,7 @@ function Navbar() {
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
-                        Electronics
+                        Jewelery
                     </NavLink>
                 </li>
                 <li>
@@ -51,7 +52,7 @@ function Navbar() {
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
-                        Furnitures
+                        Electronics
                     </NavLink>
                 </li>
                 <li>
@@ -60,18 +61,10 @@ function Navbar() {
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
-                        Toys
+                        Women's clothing
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink 
-                    to='/others'
-                    className={({isActive}) => 
-                        isActive ? activeStyle : undefined
-                    }>
-                        Others
-                    </NavLink>
-                </li>
+                
             </ul>
             <ul className='flex items-center gap-3 '>
                 <li className='text-black/60'>
@@ -104,8 +97,9 @@ function Navbar() {
                         Sign In
                     </NavLink>
                 </li>
-                <li>
-                    🛒 {context.count}
+                <li className='flex justify-between items-center'>
+                <ShoppingBagIcon className='h-6 w-6 text-black'/>
+                <div>{context.count}</div> 
                 </li>
                 
             </ul>
