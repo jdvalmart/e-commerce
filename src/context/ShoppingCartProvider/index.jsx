@@ -22,6 +22,10 @@ export const ShoppingCartProvider = ({children}) => {
 
     //Shoopin cart - add product to cart
 
+    const [order , setOrder ] = useState([])
+
+    //Shoopin cart - order
+
     const [cartProducts , setCartProducts ] = useState([])
 
     return (
@@ -39,6 +43,8 @@ export const ShoppingCartProvider = ({children}) => {
          isCheckoutSideMenuOpen, 
          openCheckoutSideMenu,
          closeCheckoutSideMenu,
+         order,
+         setOrder,
          
         }}>
             {children}
