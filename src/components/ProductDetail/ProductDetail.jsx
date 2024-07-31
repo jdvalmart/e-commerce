@@ -13,7 +13,7 @@ function ProductDetail() {
   
   return (
     <aside
-     className={`${isProductDetailOpen ? 'flex':'hidden' } ProductDetail  flex-col fixed right-1 border border-black rounded-lg bg-white `}>
+     className={`${isProductDetailOpen ? 'flex':'hidden' } Product-detail  flex-col fixed right-1 border border-black rounded-lg bg-white `}>
         <div className='flex justify-between items-center '>
             <h2 className='font-medium text-xl p-6'>Detail</h2>
             <div
