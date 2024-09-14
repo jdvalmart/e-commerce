@@ -1,5 +1,5 @@
 import React from 'react'
-import { XMarkIcon } from '@heroicons/react/24/solid'
+import { ChevronRightIcon } from '@heroicons/react/24/solid'
 
 const  OrdersCard = props => {
 
@@ -11,15 +11,18 @@ const  OrdersCard = props => {
   }
 
   return (
-    <div className='flex justify-between items-center mb-3 border border-black rounded-lg mb-4 w-80 p-4'>
-        <p className='flex justify-between'>
-          <div>
+    <div className='flex justify-between items-center mb-3 border border-black rounded-lg p-4 w-80 '>
+        <div className='flex justify-between w-full'>
+          <p className='flex flex-col'>
             <span className='font-light'>{currenDate()}</span>
-            <span>{totalProducts} articles</span>
-          </div>
+            <span className='font-light'>{totalProducts} articles</span>
+          </p>
+          <p className='flex items-center gap-2'> 
+            <span className='font-medium text-2xl'>{totalPrice}</span>
+            <ChevronRightIcon className='h-6 w-6 text-black cursor-pointer'/>
             
-            <span>{totalPrice}</span>
-        </p>
+          </p>
+        </div>
         
     </div>
   )
