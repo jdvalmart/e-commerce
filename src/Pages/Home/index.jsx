@@ -8,7 +8,23 @@ import {ProductDetail} from '../../components/ProductDetail/ProductDetail'
 
 function Home() {
  
-  const {  items, setItems, searchByTitle,setSearchByTitle} = useContext(ShoppingCartContext)
+  const {  items, setItems, searchByTitle,setSearchByTitle, filteredItems} = useContext(ShoppingCartContext)
+
+  const renderView = ()=> {
+      if(filteredItems?.length > 0){
+        return ( 
+          filteredItems?.map((item) => (
+           <Card key={item.id} data={item} />
+         ))
+       )
+      } else {
+        return (
+          <div className="text-center mt-5">No hay concidencias</div>
+        )
+      }
+     
+    } 
+  
 
 
 
@@ -23,11 +39,7 @@ function Home() {
        className='rounded-lg border  border-black w-80 p-4 mb-4 focus:outline-none'
        onChange={(event)=> setSearchByTitle(event.target.value)} />
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
-        {
-          items?.map((item) => (
-          <Card key={item.id} data={item} />
-        ))
-        }
+        {renderView()}
       
       </div>  
       <ProductDetail/>

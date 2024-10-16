@@ -12,7 +12,7 @@ import './style.css'
 
 function CheckoutSideMenu() {
 
-  const {  isCheckoutSideMenuOpen, closeCheckoutSideMenu, cartProducts, setCartProducts, order, setOrder} = useContext(ShoppingCartContext)
+  const {  isCheckoutSideMenuOpen, closeCheckoutSideMenu, cartProducts, setCartProducts, order, setOrder, setSearchByTitle} = useContext(ShoppingCartContext)
   
   const handleDelete = (id) => {
     const filteredProducts = cartProducts.filter(product => product.id != id)
@@ -28,6 +28,7 @@ function CheckoutSideMenu() {
     }
     setOrder([...order, orderToAdd])
     setCartProducts([])
+    setSearchByTitle(null)
   }
 
 

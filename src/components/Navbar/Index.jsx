@@ -5,7 +5,9 @@ import {ShoppingBagIcon} from '@heroicons/react/24/solid'
 
 function Navbar() {
 
-    const context = useContext(ShoppingCartContext)
+    
+    const {searchByCategory, setSearchByCategory, count, cartProducts} = useContext(ShoppingCartContext)
+
 
     const activeStyle = 'underline underline-offset-4'
     
@@ -22,6 +24,7 @@ function Navbar() {
                 <li>
                     <NavLink 
                     to='/'
+                    onClick={()=> setSearchByCategory()}
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
@@ -31,6 +34,7 @@ function Navbar() {
                 <li>
                     <NavLink 
                     to='/Menclothes'
+                    onClick={()=> setSearchByCategory("men's clothing")}
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
@@ -39,7 +43,8 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink 
-                    to='/electronics'
+                    to='/Jewelery'
+                    onClick={()=> setSearchByCategory('Jewelery')}
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
@@ -48,7 +53,8 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink 
-                    to='/furnitures'
+                    to='/Electronics'
+                    onClick={()=> setSearchByCategory('Electronics')}
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
@@ -57,7 +63,8 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink 
-                    to='/toys'
+                    to='/Womens clothing'
+                    onClick={()=> setSearchByCategory("Women's clothing")}
                     className={({isActive}) => 
                         isActive ? activeStyle : undefined
                     }>
@@ -99,7 +106,7 @@ function Navbar() {
                 </li>
                 <li className='flex justify-between items-center'>
                 <ShoppingBagIcon className='h-6 w-6 text-black'/>
-                <div>{context.count}</div> 
+                <div>{cartProducts.length}</div> 
                 </li>
                 
             </ul>
