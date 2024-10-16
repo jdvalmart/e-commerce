@@ -2,6 +2,10 @@
 
 En este pequeño proyecto de React con vite y tailwind css voy a trabajar en un e-commerce 
 
+# deploy en netlify
+
+https://eccommercevalmart.netlify.app/
+
 
 # React + Vite
 
